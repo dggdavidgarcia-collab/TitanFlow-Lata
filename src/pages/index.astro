@@ -1,0 +1,64 @@
+---
+import ProductCard from "../components/ProductCard.astro";
+
+import "../styles/global.css";
+
+---
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>TITANFLOW</title>
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  </head>
+
+  <body>
+    <main class="container">
+      <h1 class="title">TITANFLOW CLASSIC</h1>
+
+      <section class="products">
+        
+
+        <ProductCard 
+          name="TitanFlow Classic Grey"
+          imgBase="TitanFlow-ClassicGrey"
+          alt="Lata TitanFlow Classic gris con creatina y electrolitos, diseño minimalista con figura musculada, bebida para hidratación y fuerza"
+        />
+        
+        <ProductCard 
+          name="TitanFlow Classic Yellow"
+          imgBase="TitanFlow-ClassicYellow"
+          alt="Lata TitanFlow Classic amarilla con creatina y electrolitos, diseño musculoso en color dorado, suplemento para energía e hidratación deportiva"
+        />
+
+        <ProductCard 
+          name="TitanFlow Morango"
+          imgBase="TitanFlow-Morango"
+          alt="Lata TitanFlow sabor fresa con creatina y electrolitos, diseño púrpura eléctrico con figura musculada, suplemento energético deportivo"
+        />
+
+
+        <ProductCard 
+          name="TitanFlow Performance"
+          imgBase="TitanFlow-Performance"
+          alt="Lata TitanFlow Performance Boost con creatina y electrolitos, diseño rojo con rayos, bebida para mejorar fuerza y rendimiento físico"
+        />
+
+        <ProductCard 
+          name="TitanFlow BlueBerry"
+          imgBase="TitanFlow-Blueberry"
+          alt="Lata TitanFlow sabor arándano con creatina y electrolitos, diseño azul con figura musculada, bebida para rendimiento y recuperación"
+        />
+
+        <ProductCard 
+          name="TitanFlow Thorns Crown"
+          imgBase="TitanFlow-Thorns-Crown"
+          alt="Lata TitanFlow Thorns Crown con creatina y electrolitos, diseño verde con energía tipo corona de espinas, suplemento para atletas intensivos"
+        />
+
+      </section>
+    </main>
+  </body>
+</html>
