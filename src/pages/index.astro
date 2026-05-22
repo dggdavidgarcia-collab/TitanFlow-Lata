@@ -1,64 +1,128 @@
 ---
-import ProductCard from "../components/ProductCard.astro";
-
 import "../styles/global.css";
 
+import NavBar from "../components/NavBar.astro";
+import Footer from "../components/Footer.astro";
+import ProductCard from "../components/ProductCard.astro";
+import Parallaxsection from "../components/Parallaxsection.astro";
 ---
 
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TITANFLOW</title>
-
-    <!-- Animate.css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   </head>
 
   <body>
-    <main class="container">
+
+    <NavBar />
+
+    <!-- HERO VIDEO -->
+    <section class="hero">
+
+      <video autoplay muted loop playsinline class="bg-video">
+        <source src="/img/TITANFLOW.mp4" type="video/mp4" />
+      </video>
+
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <h1 class="hero-title">TITANFLOW</h1>
+
+        <a href="#products" class="hero-btn">
+          Explorar productos
+        </a>
+      </div>
+
+    </section>
+
+    <!-- PRODUCTOS -->
+    <section class="container" id="products">
+
       <h1 class="title">TITANFLOW CLASSIC</h1>
 
-      <section class="products">
-        
+      <div class="products">
 
-        <ProductCard 
+        <ProductCard
           name="TitanFlow Classic Grey"
           imgBase="TitanFlow-ClassicGrey"
-          alt="Lata TitanFlow Classic gris con creatina y electrolitos, diseño minimalista con figura musculada, bebida para hidratación y fuerza"
+          alt="TitanFlow Classic Grey"
+          slug="classic-grey"
         />
-        
-        <ProductCard 
+
+        <ProductCard
           name="TitanFlow Classic Yellow"
           imgBase="TitanFlow-ClassicYellow"
-          alt="Lata TitanFlow Classic amarilla con creatina y electrolitos, diseño musculoso en color dorado, suplemento para energía e hidratación deportiva"
+          alt="TitanFlow Classic Yellow"
+          slug="classic-yellow"
         />
 
-        <ProductCard 
+        <ProductCard
           name="TitanFlow Morango"
           imgBase="TitanFlow-Morango"
-          alt="Lata TitanFlow sabor fresa con creatina y electrolitos, diseño púrpura eléctrico con figura musculada, suplemento energético deportivo"
+          alt="TitanFlow Morango"
+          slug="morango"
         />
 
-
-        <ProductCard 
+        <ProductCard
           name="TitanFlow Performance"
           imgBase="TitanFlow-Performance"
-          alt="Lata TitanFlow Performance Boost con creatina y electrolitos, diseño rojo con rayos, bebida para mejorar fuerza y rendimiento físico"
+          alt="TitanFlow Performance"
+          slug="performance"
         />
 
-        <ProductCard 
+        <ProductCard
           name="TitanFlow BlueBerry"
           imgBase="TitanFlow-Blueberry"
-          alt="Lata TitanFlow sabor arándano con creatina y electrolitos, diseño azul con figura musculada, bebida para rendimiento y recuperación"
+          alt="TitanFlow BlueBerry"
+          slug="blueberry"
         />
 
-        <ProductCard 
+        <ProductCard
           name="TitanFlow Thorns Crown"
           imgBase="TitanFlow-Thorns-Crown"
-          alt="Lata TitanFlow Thorns Crown con creatina y electrolitos, diseño verde con energía tipo corona de espinas, suplemento para atletas intensivos"
+          alt="TitanFlow Thorns Crown"
+          slug="thorns-crown"
         />
 
-      </section>
-    </main>
+      </div>
+
+    </section>
+
+    <!-- PARALLAX -->
+    <Parallaxsection
+      title="ENERGÍA SIN LÍMITES"
+      subtitle="La nueva generación de bebidas deportivas"
+    />
+
+    <!-- BENEFICIOS -->
+    <section class="benefits">
+
+      <div class="benefit-card">
+        <h2>Creatina Premium</h2>
+        <p>
+          Potencia tu fuerza y recuperación muscular.
+        </p>
+      </div>
+
+      <div class="benefit-card">
+        <h2>Electrolitos</h2>
+        <p>
+          Mantén una hidratación perfecta durante el entrenamiento.
+        </p>
+      </div>
+
+      <div class="benefit-card">
+        <h2>Máximo Rendimiento</h2>
+        <p>
+          Diseñado para atletas y deportistas exigentes.
+        </p>
+      </div>
+
+    </section>
+
+    <Footer />
+
   </body>
 </html>

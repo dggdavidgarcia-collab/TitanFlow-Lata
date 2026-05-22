@@ -1,0 +1,211 @@
+---
+import "../../styles/global.css";
+
+import NavBar from "../../components/NavBar.astro";
+import Footer from "../../components/Footer.astro";
+
+const products = {
+
+  "classic-grey": {
+    name: "TitanFlow Classic Grey",
+    image: "/img/TitanFlow-ClassicGrey.png",
+    description:
+      "Creatina premium con electrólitos para maximizar tu fuerza y recuperación.",
+    price: "2.99€",
+  },
+
+  "classic-yellow": {
+    name: "TitanFlow Classic Yellow",
+    image: "/img/TitanFlow-ClassicYellow.png",
+    description:
+      "Versión energética diseñada para entrenamientos intensos.",
+    price: "3.49€",
+  },
+
+  "morango": {
+    name: "TitanFlow Morango",
+    image: "/img/TitanFlow-Morango.png",
+    description:
+      "Explosión de sabor morango con hidratación avanzada.",
+    price: "3.99€",
+  },
+
+  "performance": {
+    name: "TitanFlow Performance",
+    image: "/img/TitanFlow-Performance.png",
+    description:
+      "Fórmula avanzada para atletas de alto rendimiento.",
+    price: "4.49€",
+  },
+
+  "blueberry": {
+    name: "TitanFlow BlueBerry",
+    image: "/img/TitanFlow-Blueberry.png",
+    description:
+      "Refrescante sabor blueberry con recuperación muscular.",
+    price: "3.99€",
+  },
+
+  "thorns-crown": {
+    name: "TitanFlow Thorns Crown",
+    image: "/img/TitanFlow-Thorns-Crown.png",
+    description:
+      "Edición especial con energía extrema y diseño premium.",
+    price: "4.99€",
+  },
+
+};
+
+const slug = Astro.params.slug;
+
+const product = products[slug];
+
+if (!product) {
+  return Astro.redirect("/");
+}
+---
+
+<html lang="es">
+
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>{product.name}</title>
+  </head>
+
+  <body>
+
+    <NavBar />
+
+    <main class="product-page">
+
+      <div class="product-image">
+        <img src={product.image} alt={product.name} />
+      </div>
+
+      <div class="product-info">
+
+        <h1>{product.name}</h1>
+
+        <p>
+          {product.description}
+        </p>
+
+        <span class="price">
+          {product.price}
+        </span>
+
+        <button class="buy-btn">
+          Comprar ahora
+        </button>
+
+      </div>
+
+    </main>
+
+    <Footer />
+
+  </body>
+
+</html>
+
+<style>
+
+.product-page {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5rem;
+
+  padding: 8rem 2rem;
+
+  flex-wrap: wrap;
+}
+
+.product-image img {
+  width: 350px;
+  max-width: 100%;
+
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
+}
+
+.product-info {
+  max-width: 500px;
+}
+
+.product-info h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.product-info p {
+  color: #cbd5e1;
+
+  font-size: 1.1rem;
+  line-height: 1.7;
+
+  margin-bottom: 2rem;
+}
+
+.price {
+  display: block;
+
+  font-size: 2rem;
+  font-weight: bold;
+
+  margin-bottom: 2rem;
+
+  color: #8b5cf6;
+}
+
+.buy-btn {
+  background: #7c3aed;
+
+  color: white;
+
+  border: none;
+
+  padding: 1rem 2rem;
+
+  border-radius: 50px;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.buy-btn:hover {
+  background: #8b5cf6;
+
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+
+  .product-page {
+    text-align: center;
+    padding-top: 10rem;
+  }
+
+  .product-info h1 {
+    font-size: 2.2rem;
+  }
+
+  .product-image img {
+    width: 250px;
+  }
+
+}
+
+</style>

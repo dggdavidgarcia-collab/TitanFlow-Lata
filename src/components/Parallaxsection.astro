@@ -1,0 +1,86 @@
+---
+const {
+  title = "Explora el món",
+  subtitle = "Descobreix experiències increïbles",
+} = Astro.props;
+---
+
+<style>
+.parallax {
+  min-height: 80vh;
+
+  background-image: url('/img/paisaje.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  background-attachment: fixed;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  width: 100%;
+  min-height: 80vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.content {
+  text-align: center;
+  color: white;
+  padding: 2rem;
+  max-width: 700px;
+}
+
+.content h1 {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  margin-bottom: 1rem;
+}
+
+.content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .parallax {
+    background-attachment: fixed;
+  }
+}
+
+.parallax {
+  position: relative;
+}
+
+.parallax::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.3),
+    rgba(0,0,0,0.6)
+  );
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+</style>
+
+<section class="parallax">
+  <div class="overlay">
+    <div class="content">
+      <h1>{title}</h1>
+      <p>{subtitle}</p>
+    </div>
+  </div>
+</section>

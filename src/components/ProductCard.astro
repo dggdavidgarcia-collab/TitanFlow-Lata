@@ -1,18 +1,23 @@
 ---
-const { name, imgBase, alt } = Astro.props;
+const { name, imgBase, alt, slug } = Astro.props;
 ---
 
-<a href="#" class="product">
+<a href={`/producto/${slug}`} class="product">
+  
   <picture>
-    <source srcset={`/img/${imgBase}.avif`} type="image/avif" /> <!-- las imagenes estan por llegar-->
-    <source srcset={`/img/${imgBase}.webp`} type="image/webp" />
+    <source srcset={`/img/${imgBase}.avif`} type="image/avif" />
+
     <img 
-      src={`/img/${imgBase}.jpg`} 
+      src={`/img/${imgBase}.png`} 
       alt={alt}
       loading="lazy"
     />
   </picture>
 
   <h2>{name}</h2>
-  <p class="info">Descubre la energía de {name}</p>
+
+  <p class="info">
+    Descubre la energía de {name}
+  </p>
+
 </a>
